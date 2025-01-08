@@ -41,4 +41,5 @@ export function UserProgressContextProvider({ children }) {
         </UserProgressContext.Provider>
     )
 }
+
 export default UserProgressContext;

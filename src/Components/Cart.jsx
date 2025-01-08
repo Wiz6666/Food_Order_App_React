@@ -26,30 +26,45 @@ export default function Cart() {
         return totalPrice + item.quantity * item.price;
     }, 0);
 
+    function handleGoToCheckout() {
+        userProgressCtx.showCheckout();
+    }
 
-    return <Modal className="cart" open={userProgressCtx.progress === 'cart'}>
-        <h2>your Cart</h2>
-        <ul>
-            {/* 
+    return (
+        <Modal
+            className="cart"
+            open={userProgressCtx.progress === 'cart'}
+            onClose={userProgressCtx.progress === 'cart' ? handleCloseCart : null}
+        >
+            <h2>your Cart</h2>
+            <ul>
+                {/* 
                 CartContext.items 是购物车里的item
                 item 是购物车里的每个item
             */}
 
-            {cartCtx.items.map(item => (
-                <CartItem
-                    key={item.id}
-                    name={item.name}
-                    quantity={item.quantity}
-                    price={item.price}
-                    onIncrease={() => cartCtx.addItem(item)}
-                    onDecrease={() => cartCtx.removeItem(item.id)}
-                />
-            ))}
-        </ul>
-        <p>Total: {currencyFormatter.format(cartTotal)}</p>
-        <p className="modal-actions">
-            <Button textOnly onClick={handleCloseCart}>Close</Button>
-            <Button onClick={handleShowCheckout}>Go to checkout</Button>
-        </p>
-    </Modal>
+                {cartCtx.items.map(item => (
+                    <CartItem
+                        key={item.id}
+                        name={item.name}
+                        quantity={item.quantity}
+                        price={item.price}
+                        onIncrease={() => cartCtx.addItem(item)}
+                        onDecrease={() => cartCtx.removeItem(item.id)}
+                    />
+                ))}
+            </ul>
+            <p>Total: {currencyFormatter.format(cartTotal)}</p>
+            <p className="modal-actions">
+                <Button textOnly onClick={handleCloseCart}>
+                    Close
+                </Button>
+                {cartCtx.items.length > 0 && (
+                    <Button onClick={handleGoToCheckout}>
+                        Go to checkout
+                    </Button>
+                )}
+            </p>
+        </Modal>
+    )
 }
