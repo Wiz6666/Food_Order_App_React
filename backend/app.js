@@ -26,6 +26,7 @@ app.get('/meals', async (req, res) => {
   }
 });
 
+//处理订单,将订单数据写入orders.json文件
 app.post('/orders', async (req, res) => {
   const orderData = req.body.order;
 
