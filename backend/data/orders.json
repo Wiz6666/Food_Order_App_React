@@ -1,1 +1,22 @@
-[{"customer":{"name":"W","email":"W@gmail.com","street":"W5","postal-code":"12345","city":"Wcity"},"items":[{"id":"m2","name":"Margherita Pizza","price":"12.99","description":"A classic pizza with fresh mozzarella, tomatoes, and basil on a thin and crispy crust.","image":"images/margherita-pizza.jpg","quantity":3}],"total":38.97,"id":"440.63501119201345"},{"customer":{"name":"W","email":"W@gmail.com","street":"W5","postal-code":"12345","city":"Wcity"},"items":[{"id":"m2","name":"Margherita Pizza","price":"12.99","description":"A classic pizza with fresh mozzarella, tomatoes, and basil on a thin and crispy crust.","image":"images/margherita-pizza.jpg","quantity":3}],"total":38.97,"id":"526.0110469132886"},{"customer":{"name":"W","email":"W@gmail.com","street":"W5","postal-code":"12345","city":"Wcity"},"items":[{"id":"m2","name":"Margherita Pizza","price":"12.99","description":"A classic pizza with fresh mozzarella, tomatoes, and basil on a thin and crispy crust.","image":"images/margherita-pizza.jpg","quantity":3}],"total":38.97,"id":"160.39226922078308"},{"customer":{"name":"W","email":"W@gmail.com","street":"W5","postal-code":"12345","city":"Wcity"},"items":[{"id":"m2","name":"Margherita Pizza","price":"12.99","description":"A classic pizza with fresh mozzarella, tomatoes, and basil on a thin and crispy crust.","image":"images/margherita-pizza.jpg","quantity":3}],"total":38.97,"id":"174.03739838163946"},{"customer":{"name":"W","email":"W@gmail.com","street":"W5","postal-code":"12345","city":"W"},"items":[{"id":"m1","name":"Mac & Cheese","price":"8.99","description":"Creamy cheddar cheese mixed with perfectly cooked macaroni, topped with crispy breadcrumbs. A classic comfort food.","image":"images/mac-and-cheese.jpg","quantity":3}],"total":26.97,"id":"577.7477726324303"},{"customer":{"name":"QW","email":"W@gmail.com","street":"W5","postal-code":"12345","city":"Wcity"},"items":[{"id":"m1","name":"Mac & Cheese","price":"8.99","description":"Creamy cheddar cheese mixed with perfectly cooked macaroni, topped with crispy breadcrumbs. A classic comfort food.","image":"images/mac-and-cheese.jpg","quantity":5}],"total":44.95,"id":"64.43902062480956"},{"customer":{"name":"W","email":"W@gmail.com","street":"W5","postal-code":"12345","city":"Wcity"},"items":[{"id":"m2","name":"Margherita Pizza","price":"12.99","description":"A classic pizza with fresh mozzarella, tomatoes, and basil on a thin and crispy crust.","image":"images/margherita-pizza.jpg","quantity":3}],"total":38.97,"id":"906.80127392299"},{"customer":{"name":"W","email":"W@gmail.com","street":"W5","postal-code":"12345","city":"Wcity"},"items":[{"id":"m1","name":"Mac & Cheese","price":"8.99","description":"Creamy cheddar cheese mixed with perfectly cooked macaroni, topped with crispy breadcrumbs. A classic comfort food.","image":"images/mac-and-cheese.jpg","quantity":4}],"total":35.96,"id":"131.39567988476242"},{"customer":{"name":"W","email":"W@gmail.com","street":"W5","postal-code":"12345","city":"Wcity"},"items":[{"id":"m2","name":"Margherita Pizza","price":"12.99","description":"A classic pizza with fresh mozzarella, tomatoes, and basil on a thin and crispy crust.","image":"images/margherita-pizza.jpg","quantity":4}],"total":51.96,"id":"59.63430123540636"},{"customer":{"name":"W","email":"W@gmail.com","street":"W5","postal-code":"12345","city":"Wcity"},"items":[{"id":"m1","name":"Mac & Cheese","price":"8.99","description":"Creamy cheddar cheese mixed with perfectly cooked macaroni, topped with crispy breadcrumbs. A classic comfort food.","image":"images/mac-and-cheese.jpg","quantity":4},{"id":"m2","name":"Margherita Pizza","price":"12.99","description":"A classic pizza with fresh mozzarella, tomatoes, and basil on a thin and crispy crust.","image":"images/margherita-pizza.jpg","quantity":3}],"total":74.93,"id":"320.7157240202583"}]
+[
+    {
+        "items": [
+            {
+                "id": "m1",
+                "name": "Mac & Cheese",
+                "price": "8.99",
+                "description": "Creamy cheddar cheese mixed with perfectly cooked macaroni, topped with crispy breadcrumbs. A classic comfort food.",
+                "image": "images/mac-and-cheese.jpg",
+                "quantity": 6
+            }
+        ],
+        "customer": {
+            "name": "Weisi Zhang",
+            "email": "weisi@linux.com",
+            "street": "Unit5/89 Fairway",
+            "postal-code": "6009",
+            "city": "Crawley"
+        },
+        "id": "4.595744626259002"
+    }
+]

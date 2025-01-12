@@ -6,10 +6,8 @@ import UserProgressContext from './store/UserProgressContext.jsx';
 
 export default function Header() {
     const cartCtx = useContext(CartContext);
-    console.log(cartCtx);
 
     const userProgressCtx = useContext(UserProgressContext);
-    console.log(userProgressCtx);
 
     {/* Reduce可以把数组变成单个值 这样计算有多少个item */ }
     {/*

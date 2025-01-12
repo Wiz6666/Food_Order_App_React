@@ -6,7 +6,7 @@ import { useRef, useEffect } from 'react';
     children 是传入的组件
      open 是是否打开
 */}
-export default function Modal({ children, open,onClose, className = '' }) {
+export default function Modal({ children, open, onClose, className = '' }) {
     {/* 
         useEffect 是 react 的钩子函数
         当 open 发生变化时，会执行里面的代码
@@ -16,7 +16,6 @@ export default function Modal({ children, open,onClose, className = '' }) {
 
     useEffect(() => {
         const modal = dialog.current;
-        console.log(modal);
         if (open) {
             modal.showModal();
         }
