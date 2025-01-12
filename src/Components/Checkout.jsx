@@ -18,7 +18,7 @@ const requestConfig = {
 export default function Checkout() {
     const cartCtx = useContext(CartContext);
     const userProgressCtx = useContext(UserProgressContext);
-    const { data, isLoading: isSending, error, sendRequest } = useHttp(
+    const { data, isLoading: isSending, error, sendRequest, clearData } = useHttp(
         'http://localhost:3000/orders',
         requestConfig
     );
@@ -33,6 +33,7 @@ export default function Checkout() {
     function handleFinish() {
         cartCtx.clearCart();
         userProgressCtx.hideCheckout();
+        clearData();
     }
 
     function handleSubmit(event) {
@@ -44,13 +45,7 @@ export default function Checkout() {
             JSON.stringify({
                 order: {
                     items: cartCtx.items,
-                    customer: {
-                        name: customerData['name'],
-                        email: customerData['email'],
-                        street: customerData['street'],
-                        'postal-code': customerData['postal-code'],
-                        city: customerData['city'],
-                    },
+                    customer: customerData,
                 }
             })
         );
@@ -72,13 +67,13 @@ export default function Checkout() {
         return (
             <Modal
                 open={userProgressCtx.progress === 'checkout'}
-                onClose={handleClose}
+                onClose={handleFinish}
             >
                 <h2> Success!</h2>
-                <p>Order sent successfully!</p>
-                <p>We will contact you soon!</p>
+                <p>Your order was submitted successfully.</p>
+                <p>We will get back to you with more details soon.</p>
                 <p>
-                    <Button onClick={handleClose}>Close</Button>
+                    <Button onClick={handleFinish}>Okay</Button>
                 </p>
             </Modal>
         );

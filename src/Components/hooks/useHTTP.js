@@ -10,67 +10,64 @@ import { useState, useEffect, useCallback } from "react";
 
 
 
-
-
-
-async function sendHttpRequest(url, configs) {
-    const response = await fetch(url, configs);
+async function sendHttpRequest(url, config) {
+    const response = await fetch(url, config);
     const resData = await response.json();
-
     if (!response.ok) {
         throw new Error(resData.message || 'Request failed');
     }
-
     return resData;
 }
 
 
 
 
-export default function useHttp(url, configs, initialData) {
+
+// 发送HTTP请求的辅助函数
+// 参数:
+//   url: 请求的URL地址
+//   config: 请求的配置选项
+// 返回:
+//   解析后的响应数据
+// 如果请求失败会抛出错误
+export default function useHttp(url, config, initialData) {
     const [data, setData] = useState(initialData);
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState();
 
-    function clearData() {
+
+    function clearData(setData) {
         setData(initialData);
-        setError(null);
     }
 
-    // 发送请求
+
+
+    // 发送请求的函数
     const sendRequest = useCallback(
         async function sendRequest(data) {
             setIsLoading(true);
-            setError(null);
             try {
-                const finalConfig = configs.method === 'GET'
-                    ? configs
-                    : { ...configs, body: data };
-
-                const resData = await sendHttpRequest(url, finalConfig);
+                const resData = await sendHttpRequest(url, { ...config, body: data });
                 setData(resData);
-                return resData;
+
             } catch (error) {
                 setError(error.message || error.toString() || 'Something went wrong');
-                throw error;
-            } finally {
-                setIsLoading(false);
             }
-        },
-        [url, configs]
-    );
+            setIsLoading(false);
+        }, [url, config]);
 
+    // 如果配置了GET请求,则立即发送请求
     useEffect(() => {
-        if (url && (!configs || !configs.method || configs.method === 'GET')) {
+        if (config && (config.method === 'GET' || !config.method) || !config) {
             sendRequest();
         }
-    }, [sendRequest]);
+    }, [sendRequest, config]);
 
     return {
         data,
         isLoading,
         error,
         sendRequest,
-        clearData
+        clearData,
     };
 }
